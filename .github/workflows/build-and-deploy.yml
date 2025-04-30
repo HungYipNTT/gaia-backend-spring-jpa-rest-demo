@@ -24,7 +24,12 @@ jobs:
       run: mvn spring-boot:build-image -Dspring-boot.build-image.imageName=ghcr.io/hungyipntt/gaia-backend-spring-jpa-demo:v1
 
     - name: Login to GitHub Registry
-      run:  echo ${{ secrets.PUSH_IMG_TOKEN }} | docker login ghcr.io -u USERNAME --password-stdin
+      # run:  echo ${{ secrets.PUSH_IMG_TOKEN }} | docker login ghcr.io -u ${{ secrets.GITHUB_ACTOR }} --password-stdin
+      uses: docker/login-action@v3
+      with:
+        registry: ghcr.io
+        username: ${{ secrets.GITHUB_ACTOR }}
+        password: ${{ secrets.PUSH_IMG_TOKEN }}
 
     - name: Push Docker Image to GitHub Registry
       run: docker push ghcr.io/hungyipntt/gaia-backend-spring-jpa-demo:v1

@@ -1,4 +1,9 @@
 services:
+  spring-boot:
+    image: ghcr.io/hungyipntt/gaia-backend-spring-jpa-demo:v1
+    ports:
+      - "8080"
+
   postgres:
     image: 'postgres:17.4'
     environment:
