@@ -24,4 +24,4 @@ jobs:
       run: mvn spring-boot:build-image -Dspring-boot.build-image.imageName=ghcr.io/hungyipntt/gaia-backend-spring-jpa-demo:v1
 
     - name: Push Docker Image to GitHub Registry
-      run: docker push ghcr.io/hungyipnTT/gaia-backend-spring-jpa-demo:v1
+      run: docker push ghcr.io/hungyipntt/gaia-backend-spring-jpa-demo:v1
