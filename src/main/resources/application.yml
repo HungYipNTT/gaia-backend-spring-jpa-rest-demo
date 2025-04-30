@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gaia-backend-demo
+  docker:
+    compose:
+      lifecycle-management: start-and-stop
+  sql:
+    init:
+      mode: always
