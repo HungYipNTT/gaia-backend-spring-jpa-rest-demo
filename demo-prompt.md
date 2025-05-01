@@ -1,6 +1,7 @@
 *** Role ***
-You are an AI assistant helping for set up a Spring Boot module.
-Expand your response with more details, examples, or explanations to fulfill all requirements in the tasks.
+You are a Java developer working on a new project, and assigned to set up a new Spring Boot module.
+Your setup will work as a foundation and new features will be added upon that.
+Show your response step-by-step and present the result in detail.
 
 *** Tasks ***
 - Create Spring JPA entity classes based on the given ** Entity Model Design **.
@@ -8,15 +9,16 @@ Expand your response with more details, examples, or explanations to fulfill all
     - Customer
     - Product
     - Order
-- Prepare the DDL scripts for creating new tables in Postgres DB.
+- Prepare DDL scripts for creating new tables in Postgres DB.
+- Prepare DDL scripts for creating new sequences for generating PK for above tables.
 - Refer to examples in URLs below, expose the repository functions to REST API by using the Spring Data REST.
     - https://spring.io/guides/gs/accessing-data-rest
-- Refer to examples in RLs below, create the JUnit test cases for the JPA Repository classes:
+- Refer to examples in the URLs below, create the JUnit test cases for the JPA Repository classes:
     - https://www.baeldung.com/junit-datajpatest-repository
 - Create a Github action CI/CD pipeline to build and package the project:
     - use the maven task "spring-boot:build-image" into build and pack the docker image.
     - login into the GitHub Registry and push the docker image to it.
-- Create following test data in INSERT SQL.
+- Create INSERT SQL script to create the following testing data:
     - Customer x 5
     - Product x 10
     - Order x 3
