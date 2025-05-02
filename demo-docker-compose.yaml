@@ -1,6 +1,8 @@
 services:
   spring-boot:
     image: ghcr.io/hungyipntt/gaia-backend-spring-jpa-demo:v1
+    environment:
+      - SPRING_PROFILES_ACTIVE=demo-docker-compose
     ports:
       - "8080"
 

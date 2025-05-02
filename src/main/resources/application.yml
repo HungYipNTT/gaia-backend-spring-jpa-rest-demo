@@ -7,3 +7,14 @@ spring:
   sql:
     init:
       mode: always
+
+---
+spring:
+  profiles:
+    active:
+    - demo-docker-compose
+
+  datasource:
+    url: jdbc:postgressql:database://postgres:5432/mydatabase
+    username: myuser
+    password: secret
