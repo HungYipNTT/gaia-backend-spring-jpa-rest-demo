@@ -25,8 +25,10 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.customer (
     ver BIGINT DEFAULT 1
 );
 
+CREATE SEQUENCE IF NOT EXISTS new_sale_platform.product_seq;
+
 CREATE TABLE IF NOT EXISTS new_sale_platform.product (
-    id SERIAL PRIMARY KEY,
+    id BIGINT PRIMARY KEY DEFAULT nextval('new_sale_platform."product_seq"'),
     code VARCHAR(50),
     category VARCHAR(50),
     brand VARCHAR(50),
@@ -34,11 +36,11 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.product (
     style VARCHAR(50),
     short_description TEXT,
     unit_price DECIMAL,
-    created_by VARCHAR(100),
-    create_date TIMESTAMP,
-    last_upd_by VARCHAR(100),
-    last_upd_date TIMESTAMP,
-    ver BIGINT
+    created_by VARCHAR(100) DEFAULT CURRENT_USER,
+    create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_upd_by VARCHAR(100) DEFAULT CURRENT_USER,
+    last_upd_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ver BIGINT DEFAULT 1
 );
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.hoodie (
@@ -72,11 +74,11 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.order (
     total_amount DECIMAL,
     payment_reference VARCHAR(100),
     shipping_address TEXT,
-    created_by VARCHAR(100),
-    create_date TIMESTAMP,
-    last_upd_by VARCHAR(100),
-    last_upd_date TIMESTAMP,
-    ver BIGINT
+    created_by VARCHAR(100) DEFAULT CURRENT_USER,
+    create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_upd_by VARCHAR(100) DEFAULT CURRENT_USER,
+    last_upd_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ver BIGINT DEFAULT 1
 );
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.order_item (

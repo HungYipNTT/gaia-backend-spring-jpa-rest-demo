@@ -26,21 +26,21 @@ VALUES
 INSERT INTO new_sale_platform.hoodie 
     (code, category, brand, product_name, style, short_description, unit_price)
 VALUES 
-    ('P001', 'Hoodies', 'Nike', 'Air Hoodie', 'Casual', 'Comfortable hoodies', 59.99),
-    ('P004', 'hoodies', 'Puma', 'Sport Hoodie', 'Fitness', 'Stretchable hoodies', 49.99),
-    ('P007', 'Hoodies', 'Gap', 'GAP Hoodie', 'Casual', 'Everyday hoodies', 29.99),
-    ('P010', 'Hoodies', 'Under Armour', 'Game Hoodie', 'Competitive', 'Warm hoodies', 39.99);
+    ('P001', 'hoodie', 'Nike', 'Air Hoodie', 'Casual', 'Comfortable hoodies', 59.99),
+    ('P004', 'hoodie', 'Puma', 'Sport Hoodie', 'Fitness', 'Stretchable hoodies', 49.99),
+    ('P007', 'hoodie', 'Gap', 'GAP Hoodie', 'Casual', 'Everyday hoodies', 29.99),
+    ('P010', 'hoodie', 'Under Armour', 'Game Hoodie', 'Competitive', 'Warm hoodies', 39.99);
 
 INSERT INTO new_sale_platform.trainer 
     (code, category, brand, product_name, style, short_description, unit_price)
 VALUES 
-    ('P002', 'Trainers', 'Adidas', 'Run Trainer', 'Sporty', 'Lightweight trainers', 89.99),
-    ('P005', 'Trainers', 'Reebok', 'Classic Trainer', 'Classic', 'Old school trainers', 79.99),
-    ('P008', 'Trainers', 'New Balance', 'Balance Trainer', 'Running', 'Perfect balance', 69.99);
+    ('P002', 'trainer', 'Adidas', 'Run Trainer', 'Sporty', 'Lightweight trainers', 89.99),
+    ('P005', 'trainer', 'Reebok', 'Classic Trainer', 'Classic', 'Old school trainers', 79.99),
+    ('P008', 'trainer', 'New Balance', 'Balance Trainer', 'Running', 'Perfect balance', 69.99);
 
 INSERT INTO new_sale_platform.backpack 
     (code, category, brand, product_name, style, short_description, unit_price)
 VALUES 
-    ('P003', 'Backpack', 'North Face', 'Mountain Backpack', 'Outdoor', 'Durable backpacks', 129.99),
-    ('P006', 'Backpack', 'Nike', 'Nike Backpack', 'Sport', 'Stylish backpacks', 99.99),
-    ('P009', 'Backpack', 'Adidas', 'Travel Backpack', 'Travel', 'Completed backpacks', 119.99);
+    ('P003', 'backpack', 'North Face', 'Mountain Backpack', 'Outdoor', 'Durable backpacks', 129.99),
+    ('P006', 'backpack', 'Nike', 'Nike Backpack', 'Sport', 'Stylish backpacks', 99.99),
+    ('P009', 'backpack', 'Adidas', 'Travel Backpack', 'Travel', 'Completed backpacks', 119.99);

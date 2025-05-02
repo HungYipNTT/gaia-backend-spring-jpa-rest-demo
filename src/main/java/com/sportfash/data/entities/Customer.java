@@ -35,6 +35,7 @@ public class Customer extends Audit {
     // Additional attributes and methods
 }
 
+@Data
 @Embeddable
 class Payment {
     private String cardNo;
@@ -42,6 +43,7 @@ class Payment {
     private String cardHolderName;
 }
 
+@Data
 @Embeddable
 class Address {
     private String addressLine1;

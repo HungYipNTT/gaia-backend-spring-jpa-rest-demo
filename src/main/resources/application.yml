@@ -4,6 +4,8 @@ spring:
   docker:
     compose:
       lifecycle-management: start-and-stop
+  jpa:
+    show-sql: true
   sql:
     init:
       platform: postgres
