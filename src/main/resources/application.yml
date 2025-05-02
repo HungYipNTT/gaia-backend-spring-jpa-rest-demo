@@ -10,11 +10,17 @@ spring:
 
 ---
 spring:
-  profiles:
-    active:
-    - demo-docker-compose
+  config:
+    activate:
+      on-profile: 
+      - demo-docker-compose
+
+  docker:
+    compose:
+      enabled: false
 
   datasource:
-    url: jdbc:postgressql:database://postgres:5432/mydatabase
+    url: jdbc:postgresql://postgres:5432/mydatabase
     username: myuser
     password: secret
+
