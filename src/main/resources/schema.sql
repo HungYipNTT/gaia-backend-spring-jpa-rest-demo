@@ -2,10 +2,6 @@
 
 CREATE SCHEMA IF NOT EXISTS new_sale_platform;
 
-CREATE SEQUENCE IF NOT EXISTS new_sale_platform.customer_sequence START 1;
-CREATE SEQUENCE IF NOT EXISTS new_sale_platform.product_sequence START 1;
-CREATE SEQUENCE IF NOT EXISTS new_sale_platform.order_sequence START 1;
-
 CREATE TABLE IF NOT EXISTS new_sale_platform.customer (
     id SERIAL PRIMARY KEY,
     title VARCHAR(10),
@@ -22,11 +18,11 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.customer (
     city VARCHAR(100),
     country VARCHAR(100),
     postcode VARCHAR(10),
-    created_by VARCHAR(100),
-    create_date TIMESTAMP,
-    last_upd_by VARCHAR(100),
-    last_upd_date TIMESTAMP,
-    ver BIGINT
+    created_by VARCHAR(100) DEFAULT CURRENT_USER,
+    create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_upd_by VARCHAR(100) DEFAULT CURRENT_USER,
+    last_upd_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ver BIGINT DEFAULT 1
 );
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.product (

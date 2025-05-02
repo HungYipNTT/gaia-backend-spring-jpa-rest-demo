@@ -21,6 +21,7 @@ jobs:
         cache: maven
       
     - name: Build with Maven
+      # update the image tag, replace "hungyipntt" with your personal or organization account 
       run: mvn spring-boot:build-image -Dspring-boot.build-image.imageName=ghcr.io/hungyipntt/gaia-backend-spring-jpa-demo:v1
 
     - name: Login to GitHub Registry
@@ -29,7 +30,9 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
+        # pass in the personal access token (classic) to login GitHub registry 
         password: ${{ secrets.PUSH_IMG_TOKEN }}
 
     - name: Push Docker Image to GitHub Registry
+      # update the image tag, replace "hungyipntt" with your personal or organization account 
       run: docker push ghcr.io/hungyipntt/gaia-backend-spring-jpa-demo:v1

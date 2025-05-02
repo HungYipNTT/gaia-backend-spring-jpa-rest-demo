@@ -13,6 +13,17 @@ spring:
   config:
     activate:
       on-profile: 
+      - unit-test
+
+  docker:
+    compose:
+      enabled: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: 
       - demo-docker-compose
 
   docker:

@@ -15,3 +15,30 @@ services:
       - PGADMIN_DEFAULT_PASSWORD=admin
     ports:
       - "8081:80"
+    configs:
+      - source: servers.json
+        target: /pgadmin4/servers.json
+      - source: pgpass
+        target: /etc/pgpass
+
+# https://stackoverflow.com/questions/64620446/adding-postgress-connections-to-pgadmin-in-docker-file
+configs:
+  pgpass:
+    content: postgres:5432:*:myuser:secret
+  servers.json:
+    content: |
+      {
+        "Servers": {
+            "1": {
+                "Name": "demo DB",
+                "Group": "Servers",
+                "Host": "postgres",
+                "Port": 5432,
+                "MaintenanceDB": "mydatabase",
+                "Username": "myuser",
+                "ConnectionParameters": {
+                  "passfile": "/etc/pgpass",
+                }
+            }
+        }
+      }

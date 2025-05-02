@@ -4,5 +4,11 @@ git clone https://github.com/HungYipNTT/gaia-backend-spring-jpa-rest-demo.git
 
 cd gaia-backend-spring-jpa-rest-demo
 
-docker compose -f demo-docker-compose.yaml -d up
+# for window user installed with Docker Desktop
+docker compose -f demo-docker-compose.yaml up -d
+
+# for window user installed with podman Desktop
+podman compose -f demo-docker-compose.yaml up -d
+
+curl localhost:8080/customers
 ```
