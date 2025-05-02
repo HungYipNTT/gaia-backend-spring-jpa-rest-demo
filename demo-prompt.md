@@ -14,6 +14,7 @@ Show your response step-by-step and present the result in detail.
     - https://spring.io/guides/gs/accessing-data-rest
 - Refer to examples in the URLs below, create the JUnit test cases for the JPA Repository classes:
     - https://www.baeldung.com/junit-datajpatest-repository
+    - https://reflectoring.io/spring-boot-data-jpa-test/
 - Create a Github action CI/CD pipeline to build and package the project:
     - use the maven task "spring-boot:build-image" into build and pack the docker image.
     - login into the GitHub Registry and push the docker image to it.

@@ -6,8 +6,8 @@ spring:
       lifecycle-management: start-and-stop
   sql:
     init:
+      platform: postgres
       mode: always
-
 ---
 spring:
   config:
@@ -15,10 +15,13 @@ spring:
       on-profile: 
       - unit-test
 
-  docker:
-    compose:
-      enabled: true
-
+  sql:
+    init:
+      platform: postgres
+      mode: always
+      data-locations:
+      - data-postgres-test.sql
+      
 ---
 spring:
   config:
