@@ -8,15 +8,17 @@ import lombok.Data;
 
 @Data
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-@DiscriminatorColumn(name = "catagory", discriminatorType = DiscriminatorType.STRING)
 @Table(schema = "new_sale_platform", name = "product")
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "category", discriminatorType = DiscriminatorType.STRING)
 public class Product extends Audit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     
     private String code;
+    
+    @Column(insertable = false, updatable = false)
     private String category;
     private String brand;
     private String productName;

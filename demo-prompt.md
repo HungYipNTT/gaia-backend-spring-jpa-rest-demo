@@ -30,7 +30,7 @@ Show your response step-by-step and present the result in detail.
 
 ** Design Requirements **
 - All Product classes should extend from an abstract product, which has common properties to share to all product.
-- Use InheritanceType.TABLE_PER_CLASS for Product class inheritance strategy.
+- Use InheritanceType.JOINED for Product class inheritance strategy.
 - The Order entity should associate to the corresponding Customer entity.
 - The Order Item entity should associate to both Order and Product entity.
 - All entity classes should reside in "com.sportfash.data.entities" package.

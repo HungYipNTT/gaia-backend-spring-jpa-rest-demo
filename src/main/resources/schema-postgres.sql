@@ -44,18 +44,21 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.product (
 );
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.hoodie (
+    id BIGINT PRIMARY KEY REFERENCES new_sale_platform.product(id),
     size VARCHAR(5),
     color VARCHAR(50),
     composition TEXT,
     care_instructions TEXT
-) INHERITS (new_sale_platform.product);
+);
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.trainer (
+    id BIGINT PRIMARY KEY REFERENCES new_sale_platform.product(id),
     size VARCHAR(5),
     color VARCHAR(50)
-) INHERITS (new_sale_platform.product);
+);
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.backpack (
+    id BIGINT PRIMARY KEY REFERENCES new_sale_platform.product(id),
     color VARCHAR(50),
     strap_type VARCHAR(50),
     material TEXT,
@@ -63,7 +66,7 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.backpack (
     pockets INT,
     care_instructions TEXT,
     weatherproof BOOLEAN
-) INHERITS (new_sale_platform.product);
+);
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.order (
     order_number SERIAL PRIMARY KEY,

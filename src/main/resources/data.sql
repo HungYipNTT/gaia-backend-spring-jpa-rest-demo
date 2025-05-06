@@ -23,24 +23,62 @@ VALUES
     ('Dr.', 'James', 'Lewis', 'james.lewis@example.com', '777888999', '1970-04-08', 
     '4033333322221111', '2025-01-01', 'James Lewis', '707 Willow Ave', 'Floor 3', 'Hub City', 'USA', '54378');
 
-INSERT INTO new_sale_platform.hoodie 
-    (code, category, brand, product_name, style, short_description, unit_price)
-VALUES 
-    ('P001', 'hoodie', 'Nike', 'Air Hoodie', 'Casual', 'Comfortable hoodies', 59.99),
-    ('P004', 'hoodie', 'Puma', 'Sport Hoodie', 'Fitness', 'Stretchable hoodies', 49.99),
-    ('P007', 'hoodie', 'Gap', 'GAP Hoodie', 'Casual', 'Everyday hoodies', 29.99),
-    ('P010', 'hoodie', 'Under Armour', 'Game Hoodie', 'Competitive', 'Warm hoodies', 39.99);
+WITH tmp AS ( 
+    INSERT INTO new_sale_platform.product 
+        (code, category, brand, product_name, style, short_description, unit_price)
+    VALUES 
+        ('P001', 'hoodie', 'Nike', 'Air Hoodie', 'Casual', 'Comfortable hoodies', 59.99)
+    RETURNING id )
+INSERT INTO new_sale_platform.hoodie
+	(id, size, color, composition, care_instructions)
+SELECT id, 'Large', 'White', null, null from tmp;
 
-INSERT INTO new_sale_platform.trainer 
-    (code, category, brand, product_name, style, short_description, unit_price)
-VALUES 
-    ('P002', 'trainer', 'Adidas', 'Run Trainer', 'Sporty', 'Lightweight trainers', 89.99),
-    ('P005', 'trainer', 'Reebok', 'Classic Trainer', 'Classic', 'Old school trainers', 79.99),
-    ('P008', 'trainer', 'New Balance', 'Balance Trainer', 'Running', 'Perfect balance', 69.99);
+WITH tmp AS ( 
+    INSERT INTO new_sale_platform.product 
+        (code, category, brand, product_name, style, short_description, unit_price)
+    VALUES
+        ('P004', 'hoodie', 'Puma', 'Sport Hoodie', 'Fitness', 'Stretchable hoodies', 49.99)
+    RETURNING id )
+INSERT INTO new_sale_platform.hoodie
+	(id, size, color, composition, care_instructions)
+SELECT id, 'XXL', 'Black', null, null from tmp;
 
-INSERT INTO new_sale_platform.backpack 
-    (code, category, brand, product_name, style, short_description, unit_price)
-VALUES 
-    ('P003', 'backpack', 'North Face', 'Mountain Backpack', 'Outdoor', 'Durable backpacks', 129.99),
-    ('P006', 'backpack', 'Nike', 'Nike Backpack', 'Sport', 'Stylish backpacks', 99.99),
-    ('P009', 'backpack', 'Adidas', 'Travel Backpack', 'Travel', 'Completed backpacks', 119.99);
+WITH tmp AS ( 
+    INSERT INTO new_sale_platform.product 
+        (code, category, brand, product_name, style, short_description, unit_price)
+    VALUES 
+        ('P007', 'hoodie', 'Gap', 'GAP Hoodie', 'Casual', 'Everyday hoodies', 29.99)
+    RETURNING id )
+INSERT INTO new_sale_platform.hoodie
+	(id, size, color, composition, care_instructions)
+SELECT id, 'Small', 'Red', null, null from tmp;
+
+WITH tmp AS ( 
+    INSERT INTO new_sale_platform.product 
+        (code, category, brand, product_name, style, short_description, unit_price)
+    VALUES 
+        ('P010', 'hoodie', 'Under Armour', 'Game Hoodie', 'Competitive', 'Warm hoodies', 39.99)
+    RETURNING id )
+INSERT INTO new_sale_platform.hoodie
+	(id, size, color, composition, care_instructions)
+SELECT id, 'XXS', 'Pink', null, null from tmp;
+
+WITH tmp AS (
+    INSERT INTO new_sale_platform.product 
+        (code, category, brand, product_name, style, short_description, unit_price)
+    VALUES 
+        ('P002', 'trainer', 'Adidas', 'Run Trainer', 'Sporty', 'Lightweight trainers', 89.99)
+    RETURNING id)
+INSERT INTO new_sale_platform.trainer
+	(id, size, color)
+SELECT id, 'Large', 'Blue' from tmp;
+
+WITH tmp AS (
+    INSERT INTO new_sale_platform.product 
+        (code, category, brand, product_name, style, short_description, unit_price)
+    VALUES 
+        ('P003', 'backpack', 'North Face', 'Mountain Backpack', 'Outdoor', 'Durable backpacks', 129.99)
+    RETURNING id)
+INSERT INTO new_sale_platform.backpack
+	(id, color, strap_type, material, fastenings, pockets, care_instructions, weatherproof)
+SELECT id, 'Black', 'Shoulder Strap', 'Polyester', 'Zip', null, 'Clean With Soft Damp Cloth', false from tmp;
