@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.customer (
     create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_upd_by VARCHAR(100) DEFAULT CURRENT_USER,
     last_upd_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ver BIGINT DEFAULT 1
+    ver BIGINT DEFAULT 0
 );
 
 CREATE SEQUENCE IF NOT EXISTS new_sale_platform.product_seq;
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.product (
     create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_upd_by VARCHAR(100) DEFAULT CURRENT_USER,
     last_upd_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ver BIGINT DEFAULT 1
+    ver BIGINT DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.hoodie (
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS new_sale_platform.order (
     create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     last_upd_by VARCHAR(100) DEFAULT CURRENT_USER,
     last_upd_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ver BIGINT DEFAULT 1
+    ver BIGINT DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS new_sale_platform.order_item (

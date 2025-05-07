@@ -23,7 +23,18 @@ spring:
       mode: always
       data-locations:
       - data-postgres-test.sql
+
+  jpa:
+    show-sql: true
+    properties:
+      hibernate.format_sql: true      
       
+logging:
+  level:
+    org.springframework.test.context.jdbc: DEBUG
+    org.springframework.jdbc.datasource.init: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 ---
 spring:
   config:

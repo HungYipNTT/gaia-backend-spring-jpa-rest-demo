@@ -34,21 +34,3 @@ public class Customer extends Audit {
 
     // Additional attributes and methods
 }
-
-@Data
-@Embeddable
-class Payment {
-    private String cardNo;
-    private LocalDate expiryDate;
-    private String cardHolderName;
-}
-
-@Data
-@Embeddable
-class Address {
-    private String addressLine1;
-    private String addressLine2;
-    private String city;
-    private String country;
-    private String postCode;
-}

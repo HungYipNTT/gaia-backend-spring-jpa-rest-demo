@@ -1,0 +1,1 @@
+ALTER SEQUENCE new_sale_platform.customer_id_seq RESTART WITH 1;
